@@ -27,15 +27,25 @@ public class Envido {
 	 //Si el valor en el char(1) es != ' ' entonces comparara a partir del char (2)
 	 
 	 
+	 //Solucion. en un string auxiliar guardo solo los palos de las cartas de una mano. luego comparo la posicion y segun cual sean iguales los sumo
+	 String aux[] ={"","",""};
+	 for (int i =0; i < J1.length; i++) {
+		 aux[i] = (String)J1[i].subSequence(5, (J1[i].length()));
+		 aux[i] = aux[i].trim().toLowerCase();
+		 System.out.println(aux[i]);
+	 }
+	 
 	 
 	 //compruebo las cartas del primer jugador primero
-	 
-	 
-	 
-	 
-	 
-	 
-	 
 	 return 1;
- } 
+ }
+ public static void main(String [] args) {
+	 String a[]= {"1 De Oro",
+				"12 De Basto",
+				 "1 De Oro"};
+	 String b[]= {"11 De Oro",
+				"1 De Basto",
+				 "7 De Oro"};
+	 envido(a,b,2);
+ }
 }
