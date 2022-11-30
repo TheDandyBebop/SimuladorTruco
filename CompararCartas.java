@@ -1,6 +1,6 @@
 package simuladorTruco;
 /*
- * Este archivo sera el que, con 1 cartad e cada jugador comparara segun las normas del truco cual es mayor
+ * Este archivo sera el que, con 1 carta de cada jugador comparara segun las normas del truco cual es mayor
  * y devolvera el ganador para que otro archivo determine que jugador debera jugar a continuacion y los puntos
  * Si correspondieran. El valor de las cartas sigue el siguiente orden:
  * 	 
@@ -160,13 +160,22 @@ public static int comparar(String J1, String J2) {
 	return 4;
 }
 public static void main(String [] args) {
-	for( int i =0; i< 100; i++) {
+	for( int i =0; i< 10; i++) {
 	String	carta1 = simuladorTruco.RepartoCartas.darCartas();
 	String	carta2 = simuladorTruco.RepartoCartas.darCartas();
 	System.out.println(carta1+ "/" + carta2);
-	System.out.println(comparar(carta1, carta2));
+	switch(comparar(carta1, carta2)) {
+	case 1: System.out.println("Gana el jugador 1");
+	break;
+	case 2: System.out.println("Gana el jugador 2");
+	break;
+	case 3: System.out.println("Empate");
+	break;
+	case 4: System.err.println("Error desconocido");
+	break;
 	}
 }
+	}
 
 
 
